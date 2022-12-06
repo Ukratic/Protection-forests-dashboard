@@ -37,7 +37,7 @@ else "DL_dense" if x == "Deep Learning (Multi-Layers Denses)"
 else "AT" if x == "Average Trend"
 else "CT" if x == "Constant Trend"
 else "DL_gru" if x == "Deep Learning (Multi-Layers GRU for time series)"
-else "DL_gru_mld" if x == "Deep Learning (Multi-Layers GRU for time series + MLD parallele)"
+else "DL_gru_mld" if x == "Deep Learning (Multi-Layers GRU for time series + parallel descriptive)"
 else "RC" if x == "Ridge Classifier"
 else "XGB" if x == "XGBoost"
 else x)
@@ -63,7 +63,7 @@ with col2:
     st.markdown('AT = Average Trend (R²)')
     st.markdown('CT = Constant Trend (Assumes no change since previous campaign) (R²)')
     st.markdown('DL_gru = Deep Learning (Multi-Layers GRU for time series) (R²)')
-    st.markdown('DL_gru_mld = Deep Learning (Multi-Layers GRU for time series + MLD parallele) (R²)')
+    st.markdown('DL_gru_mld = Deep Learning (Multi-Layers GRU for time series + parallel descriptive) (R²)')
     
 
 
@@ -105,4 +105,4 @@ with col6:
     st.markdown('XGB = XGBoost (F1)')
     st.markdown('DL_dense = Deep Learning (Multi-Layers Denses) (Accuracy)')
     st.markdown('DL_gru = Deep Learning (Multi-Layers GRU for time series) (Accuracy)')
-    st.markdown('DL_gru_mld = Deep Learning (Multi-Layers GRU for time series + MLD parallele) (Accuracy)')
+    st.markdown('DL_gru_mld = Deep Learning (Multi-Layers GRU for time series + parallel descriptive) (Accuracy)')
