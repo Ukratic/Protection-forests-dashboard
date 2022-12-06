@@ -39,6 +39,7 @@ else "CT" if x == "Constant Trend"
 else "DL_gru" if x == "Deep Learning (Multi-Layers GRU for time series)"
 else "DL_gru_mld" if x == "Deep Learning (Multi-Layers GRU for time series + MLD parallele)"
 else "RC" if x == "Ridge Classifier"
+else "XGB" if x == "XGBoost"
 else x)
 
 
@@ -57,7 +58,7 @@ with col1:
 
 with col2:
     st.markdown('Correspondances : RR = Rigde Regression')
-    st.markdown('XGBoost = XGBoost')
+    st.markdown('XGB = XGBoost')
     st.markdown('DL_dense = Deep Learning (Multi-Layers Denses)')
     st.markdown('AT = Average Trend')
     st.markdown('CT = Constant Trend (Assumes no change since previous campaign)')
