@@ -36,11 +36,9 @@ else "RF" if x == "Random Forest"
 else "HGBr" if x == "Hist Gradient Boost Regressor"
 else "DT" if x == "Decision Tree"
 else "Voting" if x == "Voting of differents models"
-else "RC" if x == "RidgeClassifier"
+else "RC" if x == "Ridge Classifier"
 else "CNB" if x == "Categorical Naive Bayes"
-else "HGBc" if x == "HistGradientBoost Classifier"
-else "HGBr" if x == "HistGradientBoost Regressor"
-else "HGBc" if x == "HistGradientBoost Classifier"
+else "HGBc" if x == "Hist Gradient Boost Classifier"
 else x)
 
 st.header("Descriptive machine learning scores for basal area")

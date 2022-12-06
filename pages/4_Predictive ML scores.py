@@ -32,14 +32,13 @@ score_model["Score"] = round(score_model["Score"], 2)
 score_model_pred = score_model.loc[score_model["Mode"] == "Predictive",:]
 
 score_model_pred['simple_name'] = score_model_pred['Model'].apply(lambda x: "RR" if x == "Ridge Regression"
-else "XGBoost" if x == "XGBoost"
+else "XGB" if x == "XG Boost"
 else "DL_dense" if x == "Deep Learning (Multi-Layers Denses)"
 else "AT" if x == "Average Trend"
 else "CT" if x == "Constant Trend"
 else "DL_gru" if x == "Deep Learning (Multi-Layers GRU for time series)"
 else "DL_gru_mld" if x == "Deep Learning (Multi-Layers GRU for time series + MLD parallele)"
 else "RC" if x == "Ridge Classifier"
-else "XGBoost" if x == "XG_Boost"
 else x)
 
 
@@ -103,7 +102,7 @@ with col6:
     st.markdown('Correspondances : RC = Ridge Classifier')
     st.markdown('AT = Average Trend')
     st.markdown('CT = Constant Trend (Assumes no change since previous campaign)')
-    st.markdown('XGBoost = XGBoost')
+    st.markdown('XGB = XGBoost')
     st.markdown('DL_dense = Deep Learning (Multi-Layers Denses)')
     st.markdown('DL_gru = Deep Learning (Multi-Layers GRU for time series)')
     st.markdown('DL_gru_mld = Deep Learning (Multi-Layers GRU for time series + MLD parallele)')
