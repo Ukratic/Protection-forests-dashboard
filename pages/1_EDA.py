@@ -38,14 +38,14 @@ else 'Augmentation')
 danger = pd.DataFrame(data.groupby("PROCESS_SILVA")["PARCELLE"].nunique().reset_index())
 danger["x"] = danger["PROCESS_SILVA"].apply(lambda x : str(x))
 
-st.subheader('Different type of protection forest')
+st.subheader('Different types of protection forest')
 fig1 = px.bar(x="x", y = "PARCELLE", data_frame=danger, color="PROCESS_SILVA",
              labels={"PARCELLE":"Number of forests", "x":"Number of danger handled by the forest"},
              text_auto=True, width=600)
 fig1.update_coloraxes(showscale=False)
 st.plotly_chart(fig1, use_container_width=True)
 
-st.subheader('Differents kind of forests')
+st.subheader('Different kinds of forests')
 tForest = pd.DataFrame(data.groupby(["TYPE_FORET305", "LFI"])["PARCELLE"].nunique().reset_index())
 tForest["year"] = tForest["LFI"].apply(lambda x : "1983-1985" if x == "LFI1"
                                                             else "1993-1995" if x == "LFI2"

@@ -57,14 +57,14 @@ with col1:
     st.plotly_chart(fig1, use_container_width=True)
 
 with col2:
-    st.markdown('Correspondances : RR = Rigde Regression')
-    st.markdown('XGB = XGBoost')
-    st.markdown('DL_dense = Deep Learning (Multi-Layers Denses)')
-    st.markdown('AT = Average Trend')
-    st.markdown('CT = Constant Trend (Assumes no change since previous campaign)')
-    st.markdown('DL_gru = Deep Learning (Multi-Layers GRU for time series)')
-    st.markdown('DL_gru_mld = Deep Learning (Multi-Layers GRU for time series + MLD parallele)')
-    st.markdown('RC = Ridge Classifier')
+    st.markdown('RR = Rigde Regression (R²)')
+    st.markdown('XGB = XGBoost (R²)')
+    st.markdown('DL_dense = Deep Learning (Multi-Layers Denses) (R²)')
+    st.markdown('AT = Average Trend (R²)')
+    st.markdown('CT = Constant Trend (Assumes no change since previous campaign) (R²)')
+    st.markdown('DL_gru = Deep Learning (Multi-Layers GRU for time series) (R²)')
+    st.markdown('DL_gru_mld = Deep Learning (Multi-Layers GRU for time series + MLD parallele) (R²)')
+    
 
 
 st.header("Predictive machine learning scores for growth")
@@ -81,10 +81,9 @@ with col3:
     st.plotly_chart(fig2, use_container_width=True)
 
 with col4: 
-    st.markdown('Correspondances : RR = Rigde Regression')
-    st.markdown('DL_dense = Deep Learning (Multi-Layers Denses)')
-    st.markdown('DL_gru = Deep Learning (Multi-Layers GRU for time series)')
-    st.markdown('DL_gru_mld = Deep Learning (Multi-Layers GRU for time series + MLD parallele)')
+    st.markdown('RR = Ridge Regression (R²)')
+    st.markdown('DL_dense = Deep Learning (Multi-Layers Denses) (R²)')
+    st.markdown('DL_gru = Deep Learning (Multi-Layers GRU for time series) (R²)')
 
 
 st.header("Predictive machine learning scores for regeneration coverage rate")
@@ -100,10 +99,10 @@ with col5:
     st.plotly_chart(fig3, use_container_width=True)
 
 with col6:
-    st.markdown('Correspondances : RC = Ridge Classifier')
-    st.markdown('AT = Average Trend')
-    st.markdown('CT = Constant Trend (Assumes no change since previous campaign)')
-    st.markdown('XGB = XGBoost')
-    st.markdown('DL_dense = Deep Learning (Multi-Layers Denses)')
-    st.markdown('DL_gru = Deep Learning (Multi-Layers GRU for time series)')
-    st.markdown('DL_gru_mld = Deep Learning (Multi-Layers GRU for time series + MLD parallele)')
+    st.markdown('RC = Ridge Classifier (Accuracy)')
+    st.markdown('AT = Average Trend (F1)')
+    st.markdown('CT = Constant Trend (Assumes no change since previous campaign) (F1)')
+    st.markdown('XGB = XGBoost (F1)')
+    st.markdown('DL_dense = Deep Learning (Multi-Layers Denses) (Accuracy)')
+    st.markdown('DL_gru = Deep Learning (Multi-Layers GRU for time series) (Accuracy)')
+    st.markdown('DL_gru_mld = Deep Learning (Multi-Layers GRU for time series + MLD parallele) (Accuracy)')

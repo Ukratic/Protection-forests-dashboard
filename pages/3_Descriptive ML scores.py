@@ -55,12 +55,12 @@ with col1:
     st.plotly_chart(fig1, use_container_width=True)
 
 with col2:
-    st.markdown('LR = Linear Regression')
-    st.markdown('Lasso = Lasso')
-    st.markdown('RF = Random Forest')
-    st.markdown('HGBr = Hist Gradient Boost Regressor')
-    st.markdown('DT = Decision Tree')
-    st.markdown('Voting = Voting of differents models')
+    st.markdown('LR = Linear Regression (R²)')
+    st.markdown('Lasso = Lasso (R²)')
+    st.markdown('RF = Random Forest (R²)')
+    st.markdown('HGBr = Hist Gradient Boost Regressor (R²)')
+    st.markdown('DT = Decision Tree (R²)')
+    st.markdown('Voting = Voting of differents models (R²)')
 
 
 
@@ -78,11 +78,11 @@ with col3:
     st.plotly_chart(fig2, use_container_width=True)
 
 with col4:
-    st.markdown('LR = Linear Regression')
-    st.markdown('Lasso = Lasso')
-    st.markdown('DT = Decision Tree')
-    st.markdown('RF = Random Forest')
-    st.markdown('HGBr = Hist Gradient Boost Regressor')
+    st.markdown('LR = Linear Regression (R²)')
+    st.markdown('Lasso = Lasso (R²)')
+    st.markdown('DT = Decision Tree (R²)')
+    st.markdown('RF = Random Forest (R²)')
+    st.markdown('HGBr = Hist Gradient Boost Regressor (R²)')
 
 
 
@@ -99,9 +99,9 @@ with col5:
     st.plotly_chart(fig3, use_container_width=True)
 
 with col6:
-    st.markdown('Lasso = Lasso')
-    st.markdown('RC = RidgeClassifier')
-    st.markdown('CNB = Categorical Naive Bayes')
-    st.markdown('HGBc = Hist Gradient Boost Classifier')
-    st.markdown('RF = Random Forest')
-    st.markdown('HGBr = Hist Gradient Boost Regressor')
+    st.markdown('Lasso = Lasso (R²)')
+    st.markdown('RC = RidgeClassifier (Accuracy)')
+    st.markdown('CNB = Categorical Naive Bayes (F1)')
+    st.markdown('HGBc = Hist Gradient Boost Classifier (F1)')
+    st.markdown('RF = Random Forest (R²)')
+    st.markdown('HGBr = Hist Gradient Boost Regressor (R²)')

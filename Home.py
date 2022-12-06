@@ -16,8 +16,14 @@ st.title("Welcome to our dashboard 👋")
  
 st.sidebar.success("Select a page above")
 
-st.markdown("Hello and welcome to our dashboard for our projet on Protection Forests in Switzerland. \
-Here, you will be able to track the evolution of the protection forests from 1984 to 2017.")
+st.markdown("""Hello and welcome to our dashboard for our projet on Protection Forests in Switzerland.
+Here, you will be able to track the evolution of the protection forests from 1984 to 2017.
+**Navigate tabs :**  
+   - Exploratory Data Analysis : Different types of forest and trends in key indicators over time (graphs)
+   - Observation : Evolution of forests between collection campaigns (maps)
+   - Descriptive ML scores : Scores of Machine Learning models in our descriptive approach
+   - Predictive ML scores : Scores of Machine Learning models in our descriptive approach 
+""")
 
 @st.cache(allow_output_mutation=True)
 def load_data(nrows):
