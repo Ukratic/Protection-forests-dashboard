@@ -71,7 +71,7 @@ tForest["type"] = tForest["TYPE_FORET305"].apply(lambda x : "Undetermined" if x 
                                                                     else "Strong Timber" if x == 16
                                                                     else "Incomplete record")
 
-typeforest=st.selectbox("Sélectionnez un type de foret que vous voulez regarder", tForest["type"].sort_values().unique())
+typeforest=st.selectbox("Select the type of forest you want to see", tForest["type"].sort_values().unique())
 fig2 = px.bar(x="year", y = "PARCELLE", data_frame=tForest.loc[tForest["type"] == typeforest], color="year",
              labels={"PARCELLE":"Number of forests", "year":"Year"},
              text_auto=True, width=600)
