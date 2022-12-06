@@ -38,7 +38,7 @@ else 'Augmentation')
 danger = pd.DataFrame(data.groupby("PROCESS_SILVA")["PARCELLE"].nunique().reset_index())
 danger["x"] = danger["PROCESS_SILVA"].apply(lambda x : str(x))
 
-st.subheader('Different types of protection forest')
+st.subheader('Different types of protection forests')
 fig1 = px.bar(x="x", y = "PARCELLE", data_frame=danger, color="PROCESS_SILVA",
              labels={"PARCELLE":"Number of forests", "x":"Number of danger handled by the forest"},
              text_auto=True, width=600)

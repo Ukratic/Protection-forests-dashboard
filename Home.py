@@ -18,11 +18,12 @@ st.sidebar.success("Select a page above")
 
 st.markdown("""Hello and welcome to our dashboard for our projet on Protection Forests in Switzerland.
 Here, you will be able to track the evolution of the protection forests from 1984 to 2017.
+
 **Navigate tabs :**  
    - Exploratory Data Analysis : Different types of forest and trends in key indicators over time (graphs)
    - Observation : Evolution of forests between collection campaigns (maps)
    - Descriptive ML scores : Scores of Machine Learning models in our descriptive approach
-   - Predictive ML scores : Scores of Machine Learning models in our descriptive approach 
+   - Predictive ML scores : Scores of Machine Learning models in our predictive approach 
 """)
 
 @st.cache(allow_output_mutation=True)
@@ -38,7 +39,7 @@ if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
 
-st.subheader('Map of our forest plot')
+st.subheader('Map of our forest plots')
 
 data["species"] = data["FEU_RES"].apply(lambda x : "Coniferous" if x == 1
                                                                         else "Deciduous" if x == 2
