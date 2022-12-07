@@ -38,9 +38,10 @@ else 'Augmentation')
 danger = pd.DataFrame(data.groupby("PROCESS_SILVA")["PARCELLE"].nunique().reset_index())
 danger["x"] = danger["PROCESS_SILVA"].apply(lambda x : str(x))
 
-st.subheader('Different types of protection forests')
+st.subheader('Different types of protection from forests')
+st.markdown('From rockfalls to avalanches, landslides, floods...')
 fig1 = px.bar(x="x", y = "PARCELLE", data_frame=danger, color="PROCESS_SILVA",
-             labels={"PARCELLE":"Number of forests", "x":"Number of danger handled by the forest"},
+             labels={"PARCELLE":"Number of forests", "x":"Number of dangers handled by the forest"},
              text_auto=True, width=600)
 fig1.update_coloraxes(showscale=False)
 st.plotly_chart(fig1, use_container_width=True)
@@ -71,7 +72,7 @@ tForest["type"] = tForest["TYPE_FORET305"].apply(lambda x : "Undetermined" if x 
                                                                     else "Strong Timber" if x == 16
                                                                     else "Incomplete record")
 
-typeforest=st.selectbox("Select the type of forest you want to see", tForest["type"].sort_values().unique())
+typeforest=st.selectbox("Select a kind of forest and see how the distribution changed over time", tForest["type"].sort_values().unique())
 fig2 = px.bar(x="year", y = "PARCELLE", data_frame=tForest.loc[tForest["type"] == typeforest], color="year",
              labels={"PARCELLE":"Number of forests", "year":"Year"},
              text_auto=True, width=600)
@@ -79,8 +80,9 @@ fig2.update_coloraxes(showscale=False)
 fig2.update(layout_showlegend=False)
 st.plotly_chart(fig2, use_container_width=True)
 
-st.subheader('Repartition of decidious and coniferous trees')
+st.subheader('Repartition of deciduous and coniferous trees')
 # violin plot coniferous vs. deciduous forests
+st.markdown('Conifers are still dominant but broad-leaved trees are on the rise')
 conileaf = pd.DataFrame(data.groupby(["FEU_RES", "LFI"])["PARCELLE"].nunique().reset_index())
 conileaf["year"] = conileaf["LFI"].apply(lambda x : "1983-1985" if x == "LFI1"
                                                             else "1993-1995" if x == "LFI2"
@@ -100,7 +102,7 @@ fig3.update_coloraxes(showscale=False)
 st.plotly_chart(fig3, use_container_width=True)
 
 st.header("Forest state indicators")
-
+st.markdown('More details on map in the Observation tab')
 col1, col2, col3 = st.columns(3)
 
 with col1 : 
