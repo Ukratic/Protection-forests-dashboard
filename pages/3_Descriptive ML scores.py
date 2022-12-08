@@ -41,6 +41,20 @@ else "CNB" if x == "Categorical Naive Bayes"
 else "HGBc" if x == "Hist Gradient Boost Classifier"
 else x)
 
+st.markdown("""The Histogram Gradient Boost Regressor, our best model, is a Decision Tree. To begin with, I should point out that Decision Trees and Random Forest generally are a good place to start with the type of data we had, a mix of numerical and categorical features.
+Now, Decision Trees are often outperformed by Random Forest and a few other algorithms, but there are several reasons why it performed so well.
+
+First, this is not just a simple decision tree with optimized hyperparameters through gridsearch (though we did do that). As its name implies it uses boosting (gradient boosting specifically), which basically means that the model is improved sequentially, not through bagging (and therefore parallel training) as it would with Random Forest.
+Second, these models (histogram-based) have very fast execution and it is therefore really easy to "play around" with hyperparameters and different features and optimize every time for meaningful evaluation.
+Third, native support for missing data means that it makes the preprocessing effort much easier : a significant point when planning to try out different processes in a very short time-frame with 100+ variables, some quite hard to explain, as was our case.
+
+The first caveat is that it can be hard to deal with overfitting when using boosting. This was indeed something of a conundrum on our attempts at modeling with less data.
+And lastly, extracting feature importance required relying on a separate (and slower) Gradient Boosting Regressor, which is of course not a completely reliable approach.
+
+Given more time, we would have switched to XGBoost's implementation to see if it would improve our results slightly and help us better identify important features.
+Despite poor initial results, there might still also be an interesting way forward with the bayesian approach ( only for our classification task, of course), which we didn't have time to fully explore.""")
+
+
 st.header("Descriptive machine learning scores for basal area")
 col1, col2 = st.columns(2)
 
@@ -61,7 +75,6 @@ with col2:
     st.markdown('HGBr = Hist Gradient Boost Regressor (R²)')
     st.markdown('DT = Decision Tree (R²)')
     st.markdown('Voting = Voting of differents models (R²)')
-
 
 
 st.header("Descriptive machine learning scores for growth")

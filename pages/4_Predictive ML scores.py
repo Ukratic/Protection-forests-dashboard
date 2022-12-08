@@ -37,11 +37,18 @@ else "DL_dense" if x == "Deep Learning (Multi-Layers Denses)"
 else "AT" if x == "Average Trend"
 else "CT" if x == "Constant Trend"
 else "DL_gru" if x == "Deep Learning (Multi-Layers GRU for time series)"
-else "DL_gru_mld" if x == "Deep Learning (Multi-Layers GRU for time series + parallel descriptive)"
+else "DL_gru_mld" if x == "Deep Learning (Multi-Layers GRU for time series + MLD parallele)"
 else "RC" if x == "Ridge Classifier"
 else "XGB" if x == "XGBoost"
 else x)
 
+st.markdown("""Deep Learning models proved most effective, out of a generally disappointing endeavour, though it was not much of a surprise (a time-series related approach with only 4 observations didn't hold much promise).
+
+A 0.76 R2 score might seem decent and it generally is, but one should take into consideration that assuming no change since the previous campaign yielded a 0.68 R2 score.
+It's not so bad, but doesn't provide much solid ground on which to base actual important decisions regarding the future of forests in coming years.
+
+It should be said however that we had very little time to spend on this part of the project and even XGBoost could still be interesting to explore, since we didn't even fully optimize hyperparameters (and instead imported them from the descriptive modeling)
+""")
 
 st.header("Predictive machine learning scores for basal area")
 col1, col2 = st.columns(2)
