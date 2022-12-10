@@ -49,7 +49,7 @@ Second, these models (histogram-based) have very fast execution and it is theref
 Third, native support for missing data means that it makes the preprocessing effort much easier : a significant point when planning to try out different processes in a very short time-frame with 100+ variables, some quite hard to explain, as was our case.
 
 The first caveat is that it can be hard to deal with overfitting when using boosting. This was indeed something of a conundrum on our attempts at modeling with less data.
-And lastly, extracting feature importance required relying on a separate (and slower) Gradient Boosting Regressor, which is of course not a completely reliable approach.
+And lastly, extracting feature importance required relying on either Game Theory's Shapley values, or a separate (not Histogram-based) Gradient Boosting Regressor, which is of course not a completely reliable approach.
 
 Given more time, we would have switched to XGBoost's implementation to see if it would improve our results slightly and help us better identify important features.
 Despite poor initial results, there might still also be an interesting way forward with the bayesian approach ( only for our classification task, of course), which we didn't have time to fully explore.""")

@@ -47,7 +47,8 @@ st.markdown("""Deep Learning models proved most effective, out of a generally di
 A 0.76 R2 score might seem decent and it generally is, but one should take into consideration that assuming no change since the previous campaign yielded a 0.68 R2 score.
 It's not so bad, but doesn't provide much solid ground on which to base actual important decisions regarding the future of forests in coming years.
 
-It should be said however that we had very little time to spend on this part of the project and even XGBoost could still be interesting to explore, since we didn't even fully optimize hyperparameters (and instead imported them from the descriptive modeling)
+It should be said however that we had very little time to spend on this part of the project and even XGBoost could still be interesting to explore, since we didn't even fully optimize hyperparameters (and instead imported them from the descriptive modeling).
+One of the most interesting ways forward would be to use Recurrent Neural Networks, with Gated Recurrent Units ; using both full features and use the temporal aspect of the data.
 """)
 
 st.header("Predictive machine learning scores for basal area")
@@ -65,9 +66,9 @@ with col1:
 
 with col2:
     st.markdown('RR = Rigde Regression (R²)')
-    st.markdown('XGB = XGBoost (R²)')
+    st.markdown('XGB = XGBoost Regressor (R²)')
     st.markdown('DL_dense = Deep Learning (Multi-Layers Denses) (R²)')
-    st.markdown('AT = Average Trend (R²)')
+    st.markdown('AT = Average Trend (Previous campaign * Average rate of increase (R²)')
     st.markdown('CT = Constant Trend (Assumes no change since previous campaign) (R²)')
     st.markdown('DL_gru = Deep Learning (Multi-Layers GRU for time series) (R²)')
     st.markdown('DL_gru_mld = Deep Learning (Multi-Layers GRU for time series + parallel descriptive) (R²)')
@@ -107,9 +108,9 @@ with col5:
 
 with col6:
     st.markdown('RC = Ridge Classifier (Accuracy)')
-    st.markdown('AT = Average Trend (F1)')
+    st.markdown('AT = Average Trend (Previous campaign * Average rate of increase (F1)')
     st.markdown('CT = Constant Trend (Assumes no change since previous campaign) (F1)')
-    st.markdown('XGB = XGBoost (F1)')
+    st.markdown('XGB = XGBoost Classifier (F1)')
     st.markdown('DL_dense = Deep Learning (Multi-Layers Denses) (Accuracy)')
     st.markdown('DL_gru = Deep Learning (Multi-Layers GRU for time series) (Accuracy)')
     st.markdown('DL_gru_mld = Deep Learning (Multi-Layers GRU for time series + parallel descriptive) (Accuracy)')
