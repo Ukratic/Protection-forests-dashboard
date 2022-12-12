@@ -48,10 +48,11 @@ First, this is not just a simple decision tree with optimized hyperparameters th
 Second, these models (histogram-based) have very fast execution and it is therefore really easy to "play around" with hyperparameters and different features and optimize every time for meaningful evaluation.
 Third, native support for missing data means that it makes the preprocessing effort much easier : a significant point when planning to try out different processes in a very short time-frame with 100+ variables, some quite hard to explain, as was our case.
 
-The first caveat is that it can be hard to deal with overfitting when using boosting. This was indeed something of a conundrum on our attempts at modeling with less data.
-And lastly, extracting feature importance required relying on either Game Theory's Shapley values, or a separate (not Histogram-based) Gradient Boosting Regressor, which is of course not a completely reliable approach.
+A significant caveat is that it can be hard to deal with overfitting when using boosting. This was indeed something of a conundrum on our attempts at modeling with less data.
 
-Given more time, we would have switched to XGBoost's implementation to see if it would improve our results slightly and help us better identify important features.
+Extracting feature importance required relying on either Game Theory's Shapley values or a separate (not Histogram-based) Gradient Boosting Regressor, the latter of which is of course not a completely reliable approach.
+
+Given more time, we would have switched to XGBoost's implementation to see if it would improve our results slightly.
 Despite poor initial results, there might still also be an interesting way forward with the bayesian approach ( only for our classification task, of course), which we didn't have time to fully explore.""")
 
 
